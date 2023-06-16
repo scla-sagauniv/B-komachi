@@ -1,7 +1,7 @@
 
 ## 最初にやること
 ```bash
-git npm i
+npm i
 git clone https://github.com/scla-sagauniv/B-komachi.git
 ```
 ## 開発の手順
