@@ -1,8 +1,8 @@
 
 ## 最初にやること
 ```bash
-npm i
 git clone https://github.com/scla-sagauniv/B-komachi.git
+npm i
 ```
 ## 開発の手順
 #### おおまかな流れ
