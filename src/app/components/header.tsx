@@ -5,7 +5,7 @@ export default function Header() {
             <div className="text-white font-bold text-4xl">PROITIGO</div>
             <div className="space-x-12">
                 <a href="" className="text-white font-bold text-3xl no-underline hover:underline">usename</a>
-                <a href="" className="text-white font-bold text-3xl no-underline hover:underline">Logout</a>
+                <a href="" className="text-white font-bold text-3xl no-underline hover:underline">×</a>
             </div>
         </nav>
       </header>
