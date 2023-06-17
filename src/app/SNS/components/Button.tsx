@@ -28,7 +28,7 @@ const Modal = ({
 
   const elmModal = (
     <div className="fixed top-0 left-0 flex items-center justify-center w-full h-full object-contain">
-      <div className="relative border-8 border-rose-500 z-10 w-2/3 h-2/5 bg-white rounded-md will-change-transform will-change-opacity animate-appear">
+      <div className="flex justify-center items-center relative border-8 border-rose-500 z-10 w-2/3 h-2/5 bg-white rounded-md will-change-transform will-change-opacity animate-appear">
         <button
           className="absolute top-0 right-0 p-0 text-[2.7rem] font-bold leading-3 text-black-300 cursor-pointer "
           type="button"
@@ -39,7 +39,7 @@ const Modal = ({
             ×
           </button>
           {/* {children} */}
-          <textarea className="absolute top-10 border border-black w-2/3 h-2/3"/>
+          <textarea className="top-10 border border-black w-2/3 h-2/3"/>
           <input 
           type="submit"
           value="post"

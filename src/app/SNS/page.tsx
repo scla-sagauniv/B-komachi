@@ -1,4 +1,5 @@
 import Modal from "./components/Button";
+import Log from "./components/Log";
 
 export default function Home() {
 
