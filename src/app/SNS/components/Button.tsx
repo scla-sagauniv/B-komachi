@@ -1,15 +1,10 @@
 "use client"
 import { type ReactNode, useState } from "react";
 import { createPortal } from "react-dom";
-// import { createIncrementalCompilerHost } from "typescript";
 
 const Modal = ({
-  // children,
-  // buttonText,
   canCloseByClickingBackground = true,
 }: {
-  // children: ReactNode;
-  // buttonText: string;
   canCloseByClickingBackground?: boolean;
 }) => {
   const [isOpened, setIsOpened] = useState(false);
@@ -20,7 +15,6 @@ const Modal = ({
   if(!isOpened) {
     return (
       <button type="button" onClick={open} className="fixed bottom-10 right-12 w-24 h-24  bg-rose-500 text-3xl text-white font-semibold rounded-full hover:bg-rose-700">
-        {/* {buttonText} */}
         ♥
       </button>
     );
@@ -38,7 +32,6 @@ const Modal = ({
           >
             ×
           </button>
-          {/* {children} */}
           <textarea className="top-10 border border-black w-2/3 h-2/3"/>
           <input 
           type="submit"
@@ -53,27 +46,3 @@ const Modal = ({
 };
 
 export default Modal;
-
-// const Modal = ({children}: {children : ReactNode}) => {
-//   return (
-//     <div>
-//       <div>
-//         <button type="button" aria-label="モーダルを閉じる"> 
-//           ×
-//         </button>
-//         {children}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Modal;
-
-// export default function Modal({children}: {children: ReactNode}) {
-//     return(
-//       <footer className="fixed bottom-10 right-12">
-//         <button className="w-24 h-24  bg-rose-500 text-3xl text-white font-semibold rounded-full hover:bg-rose-700">♥</button>
-//         {children}
-//       </footer>  
-//     );
-//   }
