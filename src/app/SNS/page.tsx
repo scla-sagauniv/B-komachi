@@ -1,14 +1,15 @@
-import Button from "./components/Button";
+import Modal from "./components/Button";
+
 export default function Home() {
 
     return (
       <>
-      <main>
-        <div>
-            <button>重曹</button>
-        </div>
-      </main>
-      <Button />
+        <main>
+          <div>
+          </div>
+        </main>
+        <Modal />
+        {/* </Modal> */}
       </>
     );
-  }
+  };

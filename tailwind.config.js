@@ -7,6 +7,20 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        apper: {
+          "0%": {opacity: 0},
+          "100%": {opacity: 1},
+        },
+        disapper: {
+          "0%": {opacity: 1},
+          "100%": {opacity:0},
+        }
+      },
+      animation:{
+        apper: "appear 0.5s ease",
+        // disapper: "disappear 32 ease 0s 1 forwards"
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
