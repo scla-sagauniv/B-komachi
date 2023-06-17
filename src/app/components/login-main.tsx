@@ -9,6 +9,10 @@ export default function Main() {
   const [password, setPassword] = useState("");
   const [passwordType, setPasswordType] = useState("password");
 
+  const LogIn = () => {
+    window.location.href = "/SNS";
+    console.log("test");
+  };
   return (
     <>
       <div className="w-80 h-full flex justify-center flex-col items-center">
@@ -52,6 +56,7 @@ export default function Main() {
             sign up
           </button>
           <button
+            onClick={LogIn}
             className="mt-3 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
           >
             log in
