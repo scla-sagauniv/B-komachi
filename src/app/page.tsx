@@ -1,13 +1,11 @@
+import Main from "./components/login-main";
 
 export default function Home() {
-
   return (
     <>
-    <main>
-      <div>
-          <button>追加</button>
-      </div>
-    </main>
+      <main className="h-screen flex justify-center">
+        <Main />
+      </main>
     </>
   );
 }
