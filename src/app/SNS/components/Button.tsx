@@ -31,6 +31,7 @@ const Modal = ({onButtonClick, canCloseByClickingBackground = true}:ModalProps) 
       <div className="flex justify-center items-center relative border-8 border-rose-500 z-10 w-2/3 h-2/5 bg-white rounded-md will-change-transform will-change-opacity animate-appear">
           <button
           className="absolute right-0 top-0 h-[1.2rem] text-[1.2rem] font-bold leading-3 text-black-300 cursor-pointer "
+
           type="button"
           aria-label="モーダルを閉じる"
           
@@ -45,7 +46,7 @@ const Modal = ({onButtonClick, canCloseByClickingBackground = true}:ModalProps) 
             className="absolute bottom-2 right-5 text-[20px] bg-rose-500 rounded px-4 py-1 hover:bg-rose-400 text-white">post</button>
           </form>  
       </div>
-      {canCloseByClickingBackground && <div className="absolute top-0 left-0 w-full h-full bg-gray-500/50 z-0" onClick={close}/>}
+      {canCloseByClickingBackground && <div className="absolute top-0 left-0 w-full h-full bg-gray-500/50 z-20" onClick={close}/>}
     </div>
   );
 
