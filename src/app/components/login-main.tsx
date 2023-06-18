@@ -32,8 +32,11 @@ export default function Main() {
         </div>
         <div className="w-full flex flex-col">
           <p className="mt-3">e-mail</p>
-          {/* <input type="text" className="w-full min-w-44 border border-black" /> */}
-          <input
+          <input type="text" className="w-full min-w-44 border border-black" />
+        </div>
+        <div className="w-full flex flex-col">
+          <p className=" mt-3">password</p>
+          <input 
             value={password}
             type={passwordType}
             placeholder={"Type New Password"}
@@ -41,30 +44,23 @@ export default function Main() {
             required
             onChange={(e) => {
               setPassword(e.target.value);
-            }}
-            className="w-full min-w-44 border border-black Password"
+            }} 
+            className=" min-w-44 border border-black Password" 
           />
-
           {/* 非表示 */}
-          {passwordType === "text" && (
+          {passwordType === "password" && (
             <VisibilityOffIcon
               onClick={() => setPasswordType("text")}
-              className="Password__visual"
+              className="Password__visual" 
             />
           )}
-
           {/* 表示 */}
-          {passwordType === "type" && (
+          {passwordType === "text" && (
             <VisibilityIcon
               onClick={() => setPasswordType("password")}
               className="Password__visual"
             />
           )}
-        </div>
-        <div className="w-full flex flex-col">
-          <p className=" mt-3">password</p>
-          <input type="text" className=" min-w-44 border border-black" />
-        </div>
         <div className="flex flex-col">
           <button className="mt-6 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">
             sign up
