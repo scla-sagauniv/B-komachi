@@ -26,7 +26,7 @@ export default function MessageBoard({messageList}: MessageBoardProps) {
     return (
         <div className="bg-white m-4">
             <div className="relative top-3 border-red-900 border-2 rounded-md w-1/2 ">
-                <div className="bg-rose-400">灰原哀</div>
+                <div className="bg-rose-400">user</div>
                 <div className="break-all bg-white">{message}</div>
             </div>
         </div>
