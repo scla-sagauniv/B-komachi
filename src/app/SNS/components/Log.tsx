@@ -14,10 +14,9 @@ export default function MessageBoard({messageList}: MessageBoardProps) {
 
 
     return (
-            messageList.map(message => (
-                <Message key={message} message={message} />
-            ))
-        
+        messageList.map(message => (
+            <Message key={message} message={message} />
+        ))
     );
 }
 
