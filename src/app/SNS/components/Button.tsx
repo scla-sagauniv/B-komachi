@@ -35,8 +35,8 @@ const Modal = ({
           <textarea className="top-10 border border-black w-2/3 h-2/3"/>
           <input 
           type="submit"
-          value="post"
-          className="absolute bottom-2 right-5 text-[20px] bg-rose-500 rounded px-4 py-1 hover:bg-rose-400 text-white"/>
+          value="▶"
+          className="absolute bottom-1 right-1 bg-rose-500 w-8 h-8 rounded-full hover:bg-rose-400 text-white"/>
       </div>
       {canCloseByClickingBackground && <div className="absolute top-0 left-0 w-full h-full bg-gray-500/50 z-0" onClick={close}/>}
     </div>
