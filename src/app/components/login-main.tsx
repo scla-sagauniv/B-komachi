@@ -16,7 +16,7 @@ export default function Main() {
     console.log("test");
   };
   return (
-    <>
+    <div>
       <div className="w-80 h-full flex justify-center flex-col items-center">
         <div className="w-full flex flex-col">
           <p>username</p>
@@ -77,6 +77,6 @@ export default function Main() {
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
