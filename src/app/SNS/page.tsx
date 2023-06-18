@@ -52,7 +52,9 @@ export default function Home() {
     return (
       <>
         <div className="m-20"></div>
-        <MessageBoard messageList={sentMessage} />
+        <div className="z-0">
+          <MessageBoard messageList={sentMessage} />
+        </div>
         <Modal onButtonClick={sendData} />
       </>
     );
