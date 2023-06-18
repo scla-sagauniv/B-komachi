@@ -1,17 +1,23 @@
 "use client"
-import { type ReactNode, useState } from "react";
+import { FormEvent, useState } from "react";
 import { createPortal } from "react-dom";
 
-const Modal = ({
-  canCloseByClickingBackground = true,
-}: {
-  canCloseByClickingBackground?: boolean;
-}) => {
+interface ModalProps {
+  onButtonClick: (event: FormEvent<Element>) => void
+  canCloseByClickingBackground?: boolean
+}
+
+const Modal = ({onButtonClick, canCloseByClickingBackground = true}:ModalProps) => {
   const [isOpened, setIsOpened] = useState(false);
 
   const open = () => setIsOpened(true);
   const close = () => setIsOpened(false);
-
+  const closeAll = (e: FormEvent) => {
+    e.preventDefault()
+    
+    onButtonClick(e)
+    setIsOpened(false)
+  }
   if(!isOpened) {
     return (
       <button type="button" onClick={open} className="fixed bottom-10 right-12 w-24 h-24  bg-rose-500 text-3xl text-white font-semibold rounded-full hover:bg-rose-700">
@@ -32,11 +38,12 @@ const Modal = ({
           >
             ×
           </button>
-          <textarea className="top-10 border border-black w-2/3 h-2/3"/>
-          <input 
-          type="submit"
-          value="post"
-          className="absolute bottom-2 right-5 text-[20px] bg-rose-500 rounded px-4 py-1 hover:bg-rose-400 text-white"/>
+          <form onSubmit={(e) => closeAll(e)}>
+            <textarea className="top-10 border border-black" name="name"/ >
+            <button 
+            type="submit"
+            className="absolute bottom-2 right-5 text-[20px] bg-rose-500 rounded px-4 py-1 hover:bg-rose-400 text-white">post</button>
+          </form>
       </div>
       {canCloseByClickingBackground && <div className="absolute top-0 left-0 w-full h-full bg-gray-500/50 z-0" onClick={close}/>}
     </div>

@@ -1,6 +1,6 @@
 "use client"
 import Modal from "./components/Button";
-import Log from "./components/Log";
+import MessageBoard from "./components/Log";
 import { useEffect, useRef, useState } from 'react'
 
 export default function Home() {
@@ -8,15 +8,16 @@ export default function Home() {
   const socketRef = useRef<WebSocket>()
   const [isConnected, setIsConnected] = useState(false)
   const [formMessage, setFormMessage] = useState('')
-  const [sentMessage, setSentMessage] = useState('')
+  const [sentMessage, setSentMessage] = useState<string[]>([])
 
   const sendData = (event: any) => {
     event.preventDefault()
+    console.log(event.target[0].value)
     const payload = {
       message: event.target[0].value,
     };
     setFormMessage(payload.message)
-    console.log("set")
+    console.log("set:",formMessage)
     socketRef.current?.send(JSON.stringify(payload))
     console.log("send:",JSON.stringify(payload))
   }
@@ -35,8 +36,10 @@ export default function Home() {
 
     // server 側から送られてきたデータを受け取る
     socketRef.current.onmessage = function (event) {
-      setSentMessage(event.data)
-    }
+      console.log("data", event.data)
+      setSentMessage((prevState) => [...prevState, event.data])
+      console.log("sentMessage", sentMessage)
+    } 
 
     return () => {
       if (socketRef.current == null) {
@@ -44,13 +47,12 @@ export default function Home() {
       }
       socketRef.current.close()
     }
-  }, [])
+  },[])
 
     return (
       <>
-        <Log />
-        {`${isConnected}`}
-        <Modal />
+        <MessageBoard messageList={sentMessage} />
+        <Modal onButtonClick={sendData} />
       </>
     );
   };
